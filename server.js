@@ -1,8 +1,12 @@
+require("dotenv").config();
+
 // dependencies
 const express = require("express");
+const port = process.env.PORT || 3000;
+const methodOverride = require("method-override");
+
 const app = express();
 const mongoose = require("mongoose");
-require("dotenv").config();
 
 // database configuration
 mongoose.connect(process.env.DATABASE_URL, {
@@ -18,15 +22,20 @@ db.on("error", (err) => console.log(err.message + "mongo not running?"));
 db.on("connected", () => console.log("mongo connected"));
 db.on("disconnected", () => console.log("mongo disconnected"));
 
-// middleware
-// body parser middleware
-app.use(express.urlencoded({ extended: false}));
-
 // routes
 // home route
 app.get("/", (req, res) => {
     res.render("index.ejs");
 });
+
+// middleware
+// body parser middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+
+// controllers
+const gymsController = require("./controllers/gyms.js");
+app.use("/gyms", gymsController);
 
 // listener
 const PORT = process.env.PORT;
