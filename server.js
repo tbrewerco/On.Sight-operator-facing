@@ -23,9 +23,9 @@ db.on("disconnected", () => console.log("mongo disconnected"));
 app.use(express.urlencoded({ extended: false}));
 
 // routes
-// index
+// home route
 app.get("/", (req, res) => {
-    res.send("index page test"); // /gym_index.ejs
+    res.render("index.ejs");
 });
 
 // listener
