@@ -1,20 +1,22 @@
 const express = require("express");
-const Gym = require("../models/gyms.js");
 const router = express.Router();
-const Author = require("../models/gyms.js");
+const Gym = require("../models/gym.js");
 
-router.get("/", (req, res) => { // define index controller
-    Gym.find({}, (err, foundGyms) => {
-        res.render("gyms/index.ejs")
-            gyms: foundGyms
-    });
+// define routes/controllers
+
+router.get("/", (req, res) => {
+    Gym.find({}, (err, foundAuthors) => {
+        res.render("gyms/index.ejs", {
+            gyms: foundAuthors
+        });
+    })
 });
 
-router.get('/gyms/new', (req, res) => { // define new controller
+router.get('/new', (req, res) => { // define new controller
     res.render('gyms/new.ejs');
 });
 
-router.post("/", (req, res) => { // define create controller
+router.post("/", (req, res) => { // define create controller, create new gym with gym model
     Gym.create(req.body, (err, createdGym) => {
         res.redirect("/gyms"); // redirect to gyms index
     });
