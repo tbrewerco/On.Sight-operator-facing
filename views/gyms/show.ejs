@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/skeleton.css">
-    <title>On.Sight | Create New Gym</title>
+    <title>On.Sight | Gym Details</title>
 </head>
 <body>
     <div class="container">
@@ -16,12 +16,14 @@
             </nav>
         </header>
         <main>
-            <h2>Add New Gym to Database</h2>
-            <form action="/gyms" method="POST">
-                <label for="name">Name: </label>
-                <input type="text" name="name" />
-                <input type="submit" value="Add New Gym" />
-            </form>
+            <h2><%=  %></h2>
+            <section>
+                <h2>Gym Attributes</h2>
+                <ul>
+                    <li>Name: <%=gym.name %></li>
+                </ul>
+
+            </section>
         </main>
         <footer>
             <a href="/gyms">Back to Gyms</a>

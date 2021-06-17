@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Schema
 const gymSchema = new Schema({
-    name: String
+    name: { type: String, required: true},
 }, {
     address: String
 }, {
@@ -17,7 +17,7 @@ const gymSchema = new Schema({
 });
 
 // compile schema into mongoose model
-const Gym = mongoose.model("Gym", gymSchema);
+const Gym = mongoose.model('Gym', gymSchema);
 
 // export model
 module.exports = Gym;

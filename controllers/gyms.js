@@ -4,21 +4,33 @@ const Gym = require("../models/gym.js");
 
 // define routes/controllers
 
+// gyms index 
 router.get("/", (req, res) => {
-    Gym.find({}, (err, foundAuthors) => {
+    Gym.find({}, (err, foundGyms) => {
         res.render("gyms/index.ejs", {
-            gyms: foundAuthors
+            gyms: foundGyms
         });
-    })
+    });
 });
 
+// new page
 router.get('/new', (req, res) => { // define new controller
     res.render('gyms/new.ejs');
 });
 
-router.post("/", (req, res) => { // define create controller, create new gym with gym model
+// new - post to database
+router.post("/", (req, res) => {
     Gym.create(req.body, (err, createdGym) => {
         res.redirect("/gyms"); // redirect to gyms index
+    });
+});
+
+// show page
+router.get('/:id', (req, res) => {
+    Gym.findById(req.params.id, (err, foundGym) => {
+        res.render('gyms/show.ejs', {
+            gym: foundGym
+        });
     });
 });
 

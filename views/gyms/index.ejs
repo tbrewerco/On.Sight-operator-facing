@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+    <title>On.Sight | Gym Index</title>
 </head>
 <body>
     <div class="container">
-        <h1>On.Sight</h1>
-    <main>
-        <h2>Gyms List</h2>
-        <ul>
-            <% for(let i = 0; i < gyms.length; i++) { %>
-            <li>
-                <a href="/gyms/ <%= authors[i]._id %>"><%= gyms[i].name %></a>
-            </li>
-            <% } %>
-        </ul>
-    </main>
-        <a href="/gyms/new">Add New Gym</a>
-        <a href="/">Home</a>
+        <header>
+            <h1>On.Sight</h1>
+            <nav>
+            </nav>
+        </header>
+        <main>
+            <h2>Gyms List</h2>
+            <ul>
+                <% gyms.forEach(gym => { %>
+                <li>
+                    <a href="/gyms/<%=gym._id; %>"> <%=gym.name; %> </a>
+                </li>
+                <% }) %>
+            </ul>
+        </main>
+        <footer>
+            <a href="/gyms/new">Add New Gym</a>
+            <br/>
+            <a href="/">Home</a>
+        </footer>
     </div>
 </body>
 </html> 

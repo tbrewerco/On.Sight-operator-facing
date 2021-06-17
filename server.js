@@ -7,6 +7,8 @@ const methodOverride = require("method-override");
 
 const app = express();
 const mongoose = require("mongoose");
+app.use(express.static(__dirname + `/public`));
+// middleware
 
 // database configuration
 mongoose.connect(process.env.DATABASE_URL, {
