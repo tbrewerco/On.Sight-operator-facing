@@ -22,7 +22,11 @@
                 <ul>
                     <li>Name: <%=gym.name %></li>
                 </ul>
-
+            </section>
+            <section>
+                <form action="/gyms/<%= gym._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Gym" />
+                </form>
             </section>
         </main>
         <footer>

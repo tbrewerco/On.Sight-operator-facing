@@ -25,6 +25,13 @@ router.post("/", (req, res) => {
     });
 });
 
+// delete 
+router.delete("/:id", (req, res) => {
+    Gym.findByIdAndRemove(req.params.id, () => {
+        res.redirect("/gyms");
+    });
+});
+
 // show page
 router.get('/:id', (req, res) => {
     Gym.findById(req.params.id, (err, foundGym) => {
