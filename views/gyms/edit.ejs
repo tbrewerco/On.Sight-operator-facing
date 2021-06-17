@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/skeleton.css">
-    <title>On.Sight | Home Page</title>
+    <title>On.Sight | Edit Gym</title>
 </head>
 
 <body>
@@ -18,12 +18,17 @@
             </nav>
         </header>
         <main>
-            <h2>Home Page</h2>
-            <a href="/gyms">Gyms</a>
-            <br />
-            <a href="/routes">Routes</a>
+            <h2>Edit <%= gym.name %></h2>
+            <form action="/gyms/<%= gym._id %>?_method=PUT" method="POST">
+                <label for="name">New gym name: </label>
+                <input type="text" name="name" /><br />
+                <input type="submit" value="Update Gym" />
+            </form>
         </main>
         <footer>
+            <a href="/gyms">Back to Gyms</a>
+            <br />
+            <a href="/">Home</a>
         </footer>
     </div>
 </body>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="/skeleton.css">
     <title>On.Sight | Gym Details</title>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -28,12 +30,16 @@
                     <input type="submit" value="Delete Gym" />
                 </form>
             </section>
+            <section>
+                <a href="/gyms/<%= gym._id; %>/edit">Edit this Gym</a>
+            </section>
         </main>
         <footer>
             <a href="/gyms">Back to Gyms</a>
-            <br/>
+            <br />
             <a href="/">Home</a>
         </footer>
     </div>
 </body>
+
 </html>

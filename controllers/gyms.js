@@ -18,17 +18,33 @@ router.get('/new', (req, res) => { // define new controller
     res.render('gyms/new.ejs');
 });
 
-// new - post to database
+// delete 
+router.delete("/:id", (req, res) => {
+    Gym.findByIdAndRemove(req.params.id, () => {
+        res.redirect("/gyms");
+    });
+});
+
+// update
+router.put("/:id", (req, res) => {
+    Gym.findByIdAndUpdate(req.params.id, req.body, () => {
+        res.redirect("/gyms");
+    });
+});
+
+// create
 router.post("/", (req, res) => {
     Gym.create(req.body, (err, createdGym) => {
         res.redirect("/gyms"); // redirect to gyms index
     });
 });
 
-// delete 
-router.delete("/:id", (req, res) => {
-    Gym.findByIdAndRemove(req.params.id, () => {
-        res.redirect("/gyms");
+// edit
+router.get("/:id/edit", (req, res) => {
+    Gym.findById(req.params.id, (err, foundGym) => {
+        res.render("gyms/edit.ejs", {
+            gym: foundGym
+        });
     });
 });
 

@@ -3,11 +3,19 @@ const Schema = mongoose.Schema;
 
 // Schema
 const gymSchema = new Schema({
-    name: { type: String, required: true},
+    name: {
+        type: String,
+        required: true
+    },
 }, {
     address: String
 }, {
-    quality_rating: {type: Number, min: 1, max: 5, default: 5}
+    quality_rating: {
+        type: Number,
+        min: 1,
+        max: 5,
+        default: 5
+    }
 }, {
     created_by: String // !!! UPDATE TO EMBED userSchema !!!
 }, {
