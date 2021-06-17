@@ -6,14 +6,18 @@
 <body>
     <div class="container">
         <h1>On.Sight</h1>
+    <main>
+        <h2>Gyms List</h2>
         <ul>
+            <% for(let i = 0; i < gyms.length; i++) { %>
             <li>
-                <a href="/gyms/new">Add New Gym</a>
+                <a href="/gyms/ <%= authors[i]._id %>"><%= gyms[i].name %></a>
             </li>
-            <li>
-                <a href="/">Home</a>
-            </li>
+            <% } %>
         </ul>
+    </main>
+        <a href="/gyms/new">Add New Gym</a>
+        <a href="/">Home</a>
     </div>
 </body>
-</html>
+</html> 

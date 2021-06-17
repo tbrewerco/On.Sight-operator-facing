@@ -10,10 +10,10 @@ const mongoose = require("mongoose");
 
 // database configuration
 mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useFindAndModify: false,
+	useCreateIndex: true,
 });
 
 // database connection error/success notices
