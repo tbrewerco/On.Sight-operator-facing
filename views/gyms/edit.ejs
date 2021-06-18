@@ -20,8 +20,10 @@
         <main>
             <h2>Edit <%= gym.name %></h2>
             <form action="/gyms/<%= gym._id %>?_method=PUT" method="POST">
-                <label for="name">New gym name: </label>
-                <input type="text" name="name" /><br />
+                <input type="text" name="name" placeholder="New Gym Name"/>
+                <input type="text" name="address" placeholder="New Address"/>
+                <input type="text" name="quality_rating" placeholder="New Star Rating"/>
+                <input type="text" name="updatedBy" placeholder="Your Name"/>
                 <input type="submit" value="Update Gym" />
             </form>
         </main>

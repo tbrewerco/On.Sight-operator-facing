@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Gym = require("../models/gym.js");
+const Gym = require("../models/gym");
 
 // define routes/controllers
 
@@ -15,7 +15,9 @@ router.get("/", (req, res) => {
 
 // new page
 router.get('/new', (req, res) => { // define new controller
-    res.render('gyms/new.ejs');
+    res.render('gyms/new.ejs', {
+        gym: Gym
+    })
 });
 
 // delete 
@@ -35,7 +37,8 @@ router.put("/:id", (req, res) => {
 // create
 router.post("/", (req, res) => {
     Gym.create(req.body, (err, createdGym) => {
-        res.redirect("/gyms"); // redirect to gyms index
+        console.log(req.body);
+        res.redirect("/gyms"); 
     });
 });
 

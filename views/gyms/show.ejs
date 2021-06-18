@@ -18,11 +18,19 @@
             </nav>
         </header>
         <main>
-            <h2><%=  %></h2>
+            <h2><%=  gym.name %></h2>
             <section>
                 <h2>Gym Attributes</h2>
                 <ul>
-                    <li>Name: <%=gym.name %></li>
+                    <li>Name: <%= gym.name %></li>
+                    <li>Address: <%= gym.address %></li>
+                    <li>rating: <%= gym.quality_rating %></li>
+                    <li>Routes: <%= gym.routes %></li>
+                    <li>Created by: <%= gym.createdBy %></li>
+                    <li>Updated by: <%= gym.updatedBy %></li>
+                    <li>Date/time created: <%= gym.createdAt %></li>
+                    <li>Date/time updated: <%= gym.updatedAt %></li>
+                    
                 </ul>
             </section>
             <section>

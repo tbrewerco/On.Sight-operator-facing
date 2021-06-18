@@ -12,10 +12,10 @@ app.use(express.static(__dirname + `/public`));
 
 // database configuration
 mongoose.connect(process.env.DATABASE_URL, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useFindAndModify: false,
-	useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
 });
 
 // database connection error/success notices
@@ -23,6 +23,9 @@ const db = mongoose.connection;
 db.on("error", (err) => console.log(err.message + "mongo not running?"));
 db.on("connected", () => console.log("mongo connected"));
 db.on("disconnected", () => console.log("mongo disconnected"));
+
+// functions (test)
+
 
 // routes
 // home route
@@ -32,11 +35,12 @@ app.get("/", (req, res) => {
 
 // middleware
 
-app.use(express.urlencoded({ extended: false })); // body parser middleware
+app.use(express.urlencoded({ extended: false }));// body parser middleware
 app.use(methodOverride("_method")); // method-override middleWare
 
 // controllers
 const gymsController = require("./controllers/gyms.js");
+const Gym = require("./models/gym.js");
 app.use("/gyms", gymsController);
 
 // listener
