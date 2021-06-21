@@ -36,7 +36,7 @@ The PF application allows climbing gym users to do the following:
 
 
 ## Getting Started
-[Click Here](https://git.heroku.com/still-forest-95143.git) to see functional app.
+[Click Here](https://still-forest-95143.herokuapp.com/) to see functional app.
 
 ## Future Enhancements
 - Operator/user registration

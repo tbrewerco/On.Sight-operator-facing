@@ -35,7 +35,9 @@ app.get("/", (req, res) => {
 
 // middleware
 
-app.use(express.urlencoded({ extended: false }));// body parser middleware
+app.use(express.urlencoded({
+    extended: false
+})); // body parser middleware
 app.use(methodOverride("_method")); // method-override middleWare
 
 // controllers

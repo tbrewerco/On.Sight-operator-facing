@@ -5,7 +5,7 @@ const Gym = require("../models/gym");
 // define routes/controllers
 
 // gyms index 
-router.get("/", (req, res) => {
+router.get("/", (req, res) => { 
     Gym.find({}, (err, foundGyms) => {
         res.render("gyms/index.ejs", {
             gyms: foundGyms
