@@ -24,12 +24,16 @@ The PF application allows climbing gym users to do the following:
 
 ## Screenshots
 
-- ![screenshot](images/screen-shot-landing-page.png)
-
+- ![screenshot](images/landing.png)
   
-- ![screenshot](images/)
+- ![screenshot](images/index.png)
 
-- ![screenshot](images/screen-shot-definition.png)
+- ![screenshot](images/show.png)
+
+- ![screenshot](images/edit.png)
+
+- ![screenshot](images/new.png)
+
 
 ## Getting Started
 [Click Here](https:) to see functional app.

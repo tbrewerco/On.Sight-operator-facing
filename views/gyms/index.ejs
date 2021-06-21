@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
     <title>On.Sight | Gym Index</title>
 </head>
 
@@ -14,18 +15,17 @@
     <div class="container">
         <header>
             <h1>On.Sight</h1>
-            <nav>
-            </nav>
         </header>
         <main>
             <h2>Gyms List</h2>
-            <ul>
+            <br/>
+            <ol>
                 <% gyms.forEach(gym => { %>
                 <li>
                     <a href="/gyms/<%=gym._id; %>"> <%=gym.name; %> </a>
                 </li>
                 <% }) %>
-            </ul>
+            </ol>
         </main>
         <footer>
             <a href="/gyms/new">Add New Gym</a>

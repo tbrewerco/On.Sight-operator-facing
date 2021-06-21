@@ -40,7 +40,7 @@ app.use(methodOverride("_method")); // method-override middleWare
 
 // controllers
 const gymsController = require("./controllers/gyms.js");
-const Gym = require("./models/gym.js");
+// const Gym = require("./models/gym.js"); // placed in error, delete
 app.use("/gyms", gymsController);
 
 // listener

@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const gymSchema = new Schema({
     name: String,
     address: String,
-    quality_rating: { type: Number, min: 1, max: 5, default: 5 },
+    quality_rating: { type: Number, min: 1, max: 5 },
     createdBy: String, // !!! UPDATE TO REFERENCE userSchema !!!
     updatedBy: String,
     routes: Array,

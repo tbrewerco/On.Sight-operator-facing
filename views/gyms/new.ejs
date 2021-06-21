@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
     <title>On.Sight | Add New Gym</title>
-    <style type="text/css"></style>
 </head>
 
 <body>
@@ -20,11 +20,16 @@
         </header>
         <main>
         <h2>Add Gym to Database</h2>
+        <br/>
             <form action ="/gyms" method="POST">
                 <input type="text" name="name" placeholder="Gym Name"/>
+                <br/>
                 <input type="text" name="address" placeholder="Address"/>
+                <br/>
                 <input type="text" name="quality_rating" placeholder="Star Rating"/>
+                <br/>
                 <input type="text" name="createdBy" placeholder="Your Name"/>
+                <br/>
                 <input type="submit" value="Add New Gym" />
             </form>
             <p>*add gym routes on gym details page</p>
