@@ -4,14 +4,8 @@ On.Sight is a climbing gym application that features a public-facing (PF) versio
 
 The OF application allows climbing gym operators to do the following:
 
-- manage gym operations (inventory, payroll, scheduling, income, expenses, etc.) 
-- post their gym's details and climbing routes to a database. 
-
-The PF application allows climbing gym users to do the following:
-
-- search for their favorite climbing gyms
-- rate the difficulty and quality of climbing routes 
-- post comments, beta, and pictures relating to the route.
+- manage gym operations (inventory, payroll, scheduling, income, expenses, route-setting, etc.) 
+- post their gym's details and climbing routes to a database.
 
 ## Technologies
 - MongoDB / MongooseJS
